@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{91FF3D85-6A18-48C0-9536-9254697A95F3}|GameSearchApi\\GameSearchApi.csproj|solutionrelative:gamesearchapi\\gamesearchapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{91FF3D85-6A18-48C0-9536-9254697A95F3}|GameSearchApi\\GameSearchApi.csproj|c:\\users\\larissa\\documents\\github\\gamesearchapi\\gamesearchapi\\games.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{91FF3D85-6A18-48C0-9536-9254697A95F3}|GameSearchApi\\GameSearchApi.csproj|solutionrelative:gamesearchapi\\games.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{91FF3D85-6A18-48C0-9536-9254697A95F3}|GameSearchApi\\GameSearchApi.csproj|c:\\users\\larissa\\documents\\github\\gamesearchapi\\gamesearchapi\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{91FF3D85-6A18-48C0-9536-9254697A95F3}|GameSearchApi\\GameSearchApi.csproj|solutionrelative:gamesearchapi\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91FF3D85-6A18-48C0-9536-9254697A95F3}|GameSearchApi\\GameSearchApi.csproj|c:\\users\\larissa\\documents\\github\\gamesearchapi\\gamesearchapi\\games.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{91FF3D85-6A18-48C0-9536-9254697A95F3}|GameSearchApi\\GameSearchApi.csproj|solutionrelative:gamesearchapi\\games.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{91FF3D85-6A18-48C0-9536-9254697A95F3}|GameSearchApi\\GameSearchApi.csproj|c:\\users\\larissa\\documents\\github\\gamesearchapi\\gamesearchapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,7 +50,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "games.json",
               "DocumentMoniker": "C:\\Users\\Larissa\\Documents\\GitHub\\GameSearchApi\\GameSearchApi\\games.json",
               "RelativeDocumentMoniker": "GameSearchApi\\games.json",
@@ -75,7 +75,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Game.cs",
               "DocumentMoniker": "C:\\Users\\Larissa\\Documents\\GitHub\\GameSearchApi\\GameSearchApi\\Game.cs",
               "RelativeDocumentMoniker": "GameSearchApi\\Game.cs",
@@ -94,7 +94,7 @@
               "RelativeDocumentMoniker": "GameSearchApi\\GameSearchApi.cs",
               "ToolTip": "C:\\Users\\Larissa\\Documents\\GitHub\\GameSearchApi\\GameSearchApi\\GameSearchApi.cs",
               "RelativeToolTip": "GameSearchApi\\GameSearchApi.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAIwDgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAIwCsAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-24T18:45:00.961Z",
               "EditorCaption": ""

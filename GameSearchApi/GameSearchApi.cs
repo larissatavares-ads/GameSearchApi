@@ -52,6 +52,7 @@ namespace GameSearchApi
                     StreamWriter writer = new StreamWriter("games.json");
 
                     writer.Write(game);
+                    writer.Close();
 
                     return Results.Ok(games);
                 }
