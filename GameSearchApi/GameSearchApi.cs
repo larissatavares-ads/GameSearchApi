@@ -13,12 +13,6 @@ namespace GameSearchApi
 
         public static void MapHttpRoutes(this IEndpointRouteBuilder app)
         {
-            app.MapGet ("api/games/getall", async ([AsParameters]Game game) =>
-            {
-                Console.WriteLine($"Id: {game.Id}\tName: {game.Name}\tDescription: " +
-                    $"{game.Description}\tGenre: {game.Genre}\tDate of creation: {game.DateOfCreation}");
-            });
-
             app.MapGet("api/games/get", async () =>            
             {
                 try
@@ -26,7 +20,6 @@ namespace GameSearchApi
                     using (StreamReader reader = new StreamReader("games.json"))
                     {
                         var json = reader.ReadToEnd();
-                        //var itens = File.ReadAllText(json);
                         var games = JsonSerializer.Deserialize<List<Game>>(json)!;
 
                         return Results.Ok(games);
@@ -73,8 +66,42 @@ namespace GameSearchApi
                 }
             });
 
-            app.MapPut($"api/games/update", async (int id) => {
+            app.MapPut("api/games/update/{id}", async (int id, Game game) => 
+            {
+                try
+                {
+                    List<Game> gamesUpdated = new List<Game>();
+                    Game gameToUpdate = new Game();
 
+                    using (StreamReader reader = new StreamReader("games.json"))
+                    {
+                        var json = reader.ReadToEnd();
+                        gamesUpdated = JsonSerializer.Deserialize<List<Game>>(json)!;
+
+                        gameToUpdate = gamesUpdated.Find(x => x.Id == id);
+
+                        gameToUpdate.Id = (game.Id != 0) ? throw new Exception("O Id não pode ser modificado") : gameToUpdate.Id;
+                        gameToUpdate.Name = !string.IsNullOrWhiteSpace(game.Name) ? game.Name : gameToUpdate.Name;
+                        gameToUpdate.Description = !string.IsNullOrWhiteSpace(game.Description) ? game.Description : gameToUpdate.Description;
+                        gameToUpdate.Genre = !string.IsNullOrWhiteSpace(game.Genre) ? game.Genre : gameToUpdate.Genre;
+                        gameToUpdate.DateOfCreation = !string.IsNullOrWhiteSpace(game.DateOfCreation) ? game.DateOfCreation : gameToUpdate.DateOfCreation;
+
+                        reader.Close();
+                    }
+
+                    using (StreamWriter writer = new StreamWriter("games.json"))
+                    {
+                        writer.WriteLine("");
+                        writer.WriteLine(JsonSerializer.Serialize(gamesUpdated));
+                        writer.Close();
+                    }
+
+                    return Results.Ok("");
+                }
+                catch (Exception ex)
+                {
+                    return Results.BadRequest(ex.Message);
+                }
             });
 
             app.MapDelete("api/games/delete", async (int id) =>
