@@ -42,19 +42,30 @@ namespace GameSearchApi
             {
                 try
                 {
-                    StreamReader reader = new StreamReader("games.json");
+                    List<Game> listGames = new List<Game>();
 
-                    var json = reader.ReadToEnd();
-                    var games = JsonSerializer.Deserialize<List<Game>>(json)!;
-                    var last = games[games.Count - 1].Id + 1;
-                    game.Id = last;
+                    using (StreamReader reader = new StreamReader("games.json")) 
+                    {
+                        var json = reader.ReadToEnd();
+                        var games = JsonSerializer.Deserialize<List<Game>>(json)!;
 
-                    StreamWriter writer = new StreamWriter("games.json");
+                        listGames.AddRange(games);
 
-                    writer.Write(game);
-                    writer.Close();
+                        var last = games[games.Count - 1].Id + 1;
+                        game.Id = last;
 
-                    return Results.Ok(games);
+                        listGames.Add(game);
+
+                        reader.Close();
+                    }
+
+                    using (StreamWriter writer = new StreamWriter("games.json"))
+                    {
+                        writer.WriteLine(JsonSerializer.Serialize(listGames));
+                        writer.Close();
+                    }                        
+
+                    return Results.Ok("");
                 }
                 catch (Exception ex)
                 {
