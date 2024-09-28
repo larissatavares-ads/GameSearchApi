@@ -1,8 +1,7 @@
-﻿namespace GameSearchApi
+﻿namespace GameSearchApi.Model
 {
-    public class Game
+    public class GameRequest
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Genre { get; set; }
